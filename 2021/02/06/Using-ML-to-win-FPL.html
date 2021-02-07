@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Using ML to win FPL | fastpages</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Using ML to win FPL" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Using ML to get better at FPL" />
+<meta property="og:description" content="Using ML to get better at FPL" />
+<link rel="canonical" href="https://arpitsolanki.github.io/fastpagetest/2021/02/06/Using-ML-to-win-FPL.html" />
+<meta property="og:url" content="https://arpitsolanki.github.io/fastpagetest/2021/02/06/Using-ML-to-win-FPL.html" />
+<meta property="og:site_name" content="fastpages" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-02-06T00:00:00-06:00" />
+<script type="application/ld+json">
+{"url":"https://arpitsolanki.github.io/fastpagetest/2021/02/06/Using-ML-to-win-FPL.html","@type":"BlogPosting","headline":"Using ML to win FPL","dateModified":"2021-02-06T00:00:00-06:00","datePublished":"2021-02-06T00:00:00-06:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://arpitsolanki.github.io/fastpagetest/2021/02/06/Using-ML-to-win-FPL.html"},"description":"Using ML to get better at FPL","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/fastpagetest/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://arpitsolanki.github.io/fastpagetest/feed.xml" title="fastpages" /><link rel="shortcut icon" type="image/x-icon" href="/fastpagetest/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/fastpagetest/">fastpages</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/fastpagetest/about/">About Me</a><a class="page-link" href="/fastpagetest/search/">Search</a><a class="page-link" href="/fastpagetest/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Using ML to win FPL</h1><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-02-06T00:00:00-06:00" itemprop="datePublished">
+        Feb 6, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      8 min read
+    
+</span></p>
+
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <h1 id="using-ml-to-get-better-at-fpl">Using ML to get better at FPL</h1>
+
+<h2 id="background">Background</h2>
+<p>2020 was a particularly difficult year for everyone, with so much suffering around the world &amp; life becoming still for everyone stuck in their homes due to lockdowns. As a sports lover, I found it particularly difficult to get used to a life without any live sport. Summers in India are particularly packed with excitement of home test series at the start of the year and then IPL for the months of April &amp; May. Without access to any live sport, I turned to OTT platforms and started watching documentaries around football teams like Man City, Leeds United, Tottenham Hotspur, Sunderland etc. I finished all of them in no time and though I’ve been a cricket fan most of my life &amp; watching football for me meant only international competitions like World Cup &amp; Euros, I started getting attracted to club football.</p>
+
+<p>As the spread of Covid started reducing around the world, football was the first sport to break through the shackles &amp; premier league football resumed around the month of July. I got hooked to the sport and at the same time also got introduced to the world of Fantasy Football. I decided to give it a shot with new season beginning in September. Because I was still very new to football my knowledge around players capabilities in PL was still very limited, that led me to make several poor decisions. I also found myself getting biased around clubs that I liked &amp; filling squad with players from those clubs. This led to a poor showing after the first few gameweeks of FPL. I decided to put my skillset of data analysis to work and use it to compensate for my lack of understanding of PL and understand how different players compare against each other &amp; make transfer decisions backed by data.</p>
+
+<h2 id="gathering-data">Gathering Data</h2>
+
+<p>Following are the list of data sources used by me for the analysis</p>
+<ol>
+  <li><strong>Vaastav FPL Github</strong> - This I think is the best available data repository for FPL containing historical data around players &amp; team performances in FPL going back several years and gets refreshed on a weekly basis. Data is available <a href="https://github.com/vaastav/Fantasy-Premier-League">here</a></li>
+  <li><strong>FPL API</strong> - I used FPL API to get info around upcoming fixtures &amp; status of players fitness for a gameweek. Details around how to access the API can be found <a href="https://medium.com/@frenzelts/fantasy-premier-league-api-endpoints-a-detailed-guide-acbd5598eb19">here</a></li>
+  <li><strong>FivethirtyEight scores prediction</strong> - I really like Nate Silver’s <a href="http://fivethirtyeight.com">fivethirtyeight.com</a>]which uses analytics &amp; data science to predict outcomes of several real life events. They also make predictions around expected score for games in PL as well. I use this dataset capture level of difficulty of a fixture &amp; scores prediction</li>
+</ol>
+
+<h2 id="data-overview">Data Overview</h2>
+<p>Our base dataset for this analysis is the Github repository mentioned above.  It contains various data points around a player’s performance in a particular match as shown below -</p>
+
+<p><img src="https://lh3.googleusercontent.com/Yk-OyPDlKpyLErOsWZhjQCWlsn1TtmkDWKI9OTbIImwsVtZ2W1p74ViqESsXUoxj1Ery58DP4E3C0OVrtgC6l-ly-X1I3b5z_578cDQMiUJ8DY9Oz-MVr_mxedladOzTTTw0kpAwRojOdGGFmndJTYewZNCktFO4jnoWyuamUNPpauxMM_8Dn6p0-F0j2_Ebj9C4yOfpKD5IHeyC6fNyRrChvxj9xARfMOsI8HPxTxme7TqSKdJilsFGkffNA6duAs4y4jk8CJW8urn2r9v1p3oBTF5MjII7rbIHnvu1tlEOkLhOxxsdUcAu85XUwP68Tcx4HOW_DzNJRwc_VR7g-rLYDIG3LMkbNQEcGTvEn274j2DkIlL3i0ww8BH0pg4Xg1AMrMLlKU50BGGU8UtyatGoZA_8-gjWOQFfHiNmvv7hQA17XpEvOKi-_VQyDHjv8ZoafURD4uqfiyo4egrky88HP4ycJ6MVh6bKqptwgoecBsHgWnw0jTXz2XOH1OcKafhyjZ2yek5pMV7-F56buWfin3WkTF6Q8vD1xm0dv1fH1l-TLdNrd2nP7WaSK4dGBb-O_K_VLQXuNfaOkfj1f97G2_lo_IX2HahEdc1wunt7GQXSNa2tJTNqBkEDsF_F3LEq0Z9KpBQ-Jp3EJTFM-notL9w4fTYt26nIuh5gjipmJ3bz2x7EzHSCZa74=w1004-h268-no?authuser=0" alt="enter image description here" /></p>
+
+<p>We combine the base datasets with additional data points from the FPL API &amp; Fivethirtyeight datasets. Once we have the data ready, the first thing we do is to look at distribution of points scored by players during a game week. As the chart below suggests, huge majority of players score less than or equal to 2 points in a game week. Events providing returns like assists, goals &amp; clean sheets are quite rare.  High number of players scoring zeros could be attributed to the fact that all premier league have big squads of around 25 players and only about 12-13 of them feature in a game. Since the distribution of points scored by players for more than 2 points is quite scattered, its quite difficult to actually predict the exact number of points scored by a player. 
+<img src="https://lh3.googleusercontent.com/BPueQDyIHcGhGKWpRBVbb19BVeE2_6cmTvCkXdQQzd3cETwqmzPRzFgqo1WaSDggPYqSg_Yygqd9JIKNa3D9OqT6O7ifYJoDHXckfPtmY3_B9_Sm3lroGE_OMb7fD2Y-GvXnaAfwORmDw6k9iYS0Gg3TTZiFcVe2QrVJqu_RrMesI2Hlb3AubrnmtSeXfequmjKjGrCXhjVFJlZRCoTapYwQqyabPJIvOOC3yFqezFx8Lvg0xRL_y7zcOJYKoED1JuYSyCOtnKetQnIhQXHRqXTR-MLMBOKSDH32r9ovwxRVKY-HHQsbImNFBd8ZqS33TxecyQtnVtscriUwFsEwzLZvlMSewqjMqX0hXr22S4gFyV8kPBwPMCQWMEB9vHtGqjK0_x22CEtGGu0--D1uCSvf-0PMfi_C2KPBNUrSjpm8PVRGFS3WkGuid2ezo7BgXb3XgFh3D06m-IEMTm1WxTT99NlF1pEk5l8XDymDfBzlHlRdXVwfktCZ8xqPQpVhW6foQOx40HpRZwY6OE2T8VBz2aNGOBrfdoruJRLT9gE-Hur4yF93AgXSfyRAh2lBJ00jLi-pXir0zwTqjVDTfGfsE81k-DfXdVss1rYOYR4YTLkdoCKR86TbIrZW2MoX7to4iwGaGScx4zVa8TTztBqAReppGhJqVyu8w0wHxf-thmRmLmD019wMlUYF=w1158-h525-no?authuser=0" alt="enter image description here" /></p>
+
+<p>Let’s now look at how the proportion of blanking(&lt;=2 pts) and not blanking(2+points) looks by player position. Goalkeepers are most likely to blank based on the chart below, seems logical as well since only way GKs generally gain points is by maintaining clean sheets. For every other position, the proportions are quite similar. 
+<img src="https://lh3.googleusercontent.com/EXWfTKnVPsG1ANIbJraRR1jb7xHO-h1g12pIgfCGycSMb40aU-CdzHoq5niZzWvoYdfbymlqXWIkbFz8n-8H5EfRwnuWWYUUwjtpzKJbsaxP9D9y3kZHNfd4aSU9mR9zg6wH6eLtRiiyLybK-t4iqJcNmWxU3w5EYzmFiEB7rqNkFosxYSVRT1hhsUVvIiCcMyJ4j4nPiE1lkQiVN1DldpqcL-69leisLtqmS0HdhyWIfmuYBr5IEBFZHzX0rgoI8C9uLD4cCLRbZAwjE-AYYiKjEjdwU7TalrRFbfkf4mQLO0Xs4zF0ybhbq0zYzr66BZWleoo8LFyT36apxPyBjEYvjhhjC8sxxSY9-Y7n4Igkq_2vRl6i3NjorpoJ8sLVPiRYatTUKMPcH3DI6_qBMixFM9CZ8vU24qEIEGho-hxN-ZSguUIOvu1eLXyJ3Fn-DPGEDCylFS5hxOhuwpGD2XMB7N72iHQlPmh6rpduBzOQScHqZKJxZDkgA2KONSXbYN_Psp16nilL_iSJxXT5o957CUE1Ybu4YcV33hUf50b9cKr2TT6XvvcoOKtyZrAZUFR_T7-50GYCFY_XOSi7Oq73tt__Dzn8y991JNHZehzsuAAuY_kNoDa5JaHdmQot12rYWXkPUTq0Or4eUylzEZWC9Lqvv-s-KhMvgo_JONzcVd-pfS7CfwRxykgN=w1158-h525-no?authuser=0" alt="enter image description here" /></p>
+
+<p>After taking a look at the above data points, I decided that it will be a better idea to build a classification model rather than a regression model for this exercise. <strong>The objective of the model would be to identify players who are most likely to score 2+points in a week</strong>. Since most players score less than 2 points in a week, this would be an example of imbalanced classification problem. We’ll be building tree based classifiers for this problem.</p>
+
+<h2 id="feature-engineering">Feature Engineering</h2>
+<p>Quality of predictions for any model is directly correlated to the quality of features being fed into the model. I found the overall quality of data to be very rich &amp; clean for this project, therefore lot of variables available in the raw datasets can directly be used as features.  On top of that I added several features on my end to capture form &amp; opponent strengths into the model. After going through several iterations of model training on added features, here are the list of features I came up with -</p>
+
+<h3 id="player-performance">Player Performance</h3>
+<ul>
+  <li>Influence, Creativity &amp; Threat metrics</li>
+  <li>Rolling average of points scored during last four weeks</li>
+  <li>Position of a player</li>
+  <li>Player’s contribution to team’s total points</li>
+  <li>Rolling average of minutes played during last four weeks</li>
+  <li>Goals scored, assists &amp; clean sheets kept</li>
+  <li>Yellow &amp; Red Cards</li>
+  <li>Number of incoming transfers by FPL managers during a game week</li>
+</ul>
+
+<h3 id="team-performance">Team Performance</h3>
+<ul>
+  <li>Diff. between team &amp; opponent’s position in the points table</li>
+  <li>Team’s form over last four weeks</li>
+  <li>Home or away fixture</li>
+  <li>Projected scores from fivethirtyeight</li>
+  <li>Total points scored by all players in the team</li>
+  <li>Penetrations into opponent’s box &amp; number of penetrations allowed</li>
+</ul>
+
+<h2 id="model-design">Model Design</h2>
+<p>My workflow has been designed in such a way that it uses historical data for the entire season until the latest gameweek for training the model &amp; then makes prediction for the upcoming week. Predictions includes list of 11 players who are most likely to score more than 2 points during the gameweek. 
+<img src="https://lh3.googleusercontent.com/v60c_UhxWn15d3FXHmGvT1Gz_GKVNATErBdfL_2aoN2tFXsCDAYoz9CI9939SccPoYjffqKUL5s8CmVtR0kJ_03JXduim7HsiMt3zZQkQozT2UQIk9x3irL9lUkm0DyXxEWIXB-dQfMB4oFXNbSFhMsGsxhezNLD8LNI8k-A2AftuYeMXaqBdsFVNfrgYAPJ_hwlZ3VrAwP5UlkYWFbVZwIShVQqRE6IDHsmyOkxNfMCuYCv9Q4kJnXxoQHCg-cBU3rAT5Fzcu5cI8o8fVwrPdlbJQLzo5YtJJXJx4uad7VyiWjHlxQ70thrICoymz9D4ob306wVWWwNDmdJijDC9DmIsYraiKMc0JUJAsPEWTntR5dPts75uOYzqtHuGZbm6DylKUcbqlR-6sWb4eq3u_Y2WjSzRBcqADNxt0HqKC5bwaCxFU7bfR3gvhtDbgRhqor-MqY-0JO0ksYl3xFcxbCm9rsUSri4sDz_0RefybwO4MMTLTiU9koHRXAIYVeUpPx9argXLv4ugiAQRgQsWAtj3XqBPzPg8N68x3p024OB9XAjxTsiqFZg7GR8VGkB-V1Q0pv9jNyxZ_D_Q4-PSzVNLzWco6ZDlr7DXnoQI9fPbTZLbo_XMc87TvjLtSpb33IDDogijlIbmGmqp5Gnbk0YVdTWpa9yjR2OGGovqPEgk7O_49fK4v9Mmi6F=w872-h456-no?authuser=0" alt="enter image description here" />
+The project is deployed as a pipeline that runs every week and uses historical data till the latest game week and makes prediction for the upcoming game week.</p>
+
+<h2 id="model-development">Model Development</h2>
+<p>As seen in the data earlier majority of the players during a particular gameweek tend to blank(score less than or equal to 2 points for appearance). Since football is a low scoring sport &amp; events like goals etc. can be quite random, it is very hard to predict the exact number of points scored by a player during a game week. Therefore I turned this into a 2 class classification problem where i’m just trying to predict if a player would blank in a particular gameweek or score more than 2+ points.</p>
+
+<p>I decided to train tree based ensemble models using Random Forests &amp; XGBoost and used a weighted average of the predictions used by both the models. The final output of model is a dataset with probability of each player not blanking during the upcoming game week. Here is the <strong>feature importance</strong> plot for the random forest model -</p>
+
+<p><img src="https://lh3.googleusercontent.com/Krl70aUFGAsTeP__xrI_l4MhXz2afnE_SXISZqQfQGzK9y1rTXQrKWlo2Rf5P5o8xmSAYZCaU9yNYNe89QHAorPq8dXS8ko-AKsAhYNZFe5IHsRsKAOFwcDqMjU0SVfNLS0yvTNY5x553pliiB0aBuVrc3IeI2-aeFNMvqe_rLMWJpxWZHasZxztJL4xIbpqUFcBybeZ55jiPju4etRGMXIi1aEBe_bxOP7l5AS0ISoX9hxUeNbz6B3HdsLO2lAsNl5PmBxaR_-ucKYw39pFnlTq-CKYlWVaN7udCJ8oHyoJFMRFU2Gr9pAqXk0j-nQzaxY_b9R10FPqW8KUgIiHljAjIqdM2ae-QEagw4vXzP89tbUSFerJe1hrVHpGsjO4hyTV_mlTqkLrbfoEGawO3qEtTWZISUonjj6oggV6mWh4bjMXqyIWIRAovP-H7jzO9hBfZhoebGnSqpa7M1Aj2vI48CGuT2Y-Z9a72-cEtiXmv7N-D5L27WoFtn_qU9j6wPOpW0oy_OCai5dKnv5so7VIr_K_ErG54v43M6bZBEoConhmDqNtrtFnpw8NRo0dTzmF1Qt0owTSh05Vg7f_s0r6XytmO_L0WQW2HmpjBNn3Bc7C3_SBMfYXqYdAzj8n35cJcEBQg9vtvZV9c6AZaDFLXfD7-HUFvgGo3VTl-WFp4AJbRjgW77qX1_VX=w1051-h901-no?authuser=0" alt="enter image description here" />
+As we all know the 2020-21 season been a pretty weird one with teams going through runs of good &amp; bad forms. The model seems to recognize that as well &amp; the features with rolling average of last four weeks on points scored, ICT index etc. tend to have a lot of importance. This model in particular tends to answer the classic conundrum of FPL managers - form vs fixtures in favor of form.</p>
+
+<p>This model had an overall accuracy of 78%, but given that this is an imbalanced classification problem and we’re interested in accurately identifying top 11 players who are likely to score, we’re more interested in the true positive rate of the model.</p>
+
+<p><img src="https://lh3.googleusercontent.com/OqqWptHtB5DaqOTdVh4xyE5PD8EuShhUnzoga4ozIlNU8Agq_kgxCzJsPeFRCbwggUu3PEIP-5DcwFYrpHFSeQSu0W61uwhF6Duuxnwmj-IYWCQ7YL0enlIKtibj2sYcdbBguuGYW20pQkb_qWkG5gvHKRm3B7KSgJZhTin3t01PFfk70830lDaHMV7zlB8liPIsB4kyyE_PvfnSd9ndo5lmwkwKQTANDdEHOKcKrmMP5piREAIDZlPhs3M3IOMGx264jKKIuRr7SBAJuU69CoGqXKEOCvoSZVoMxBGABCOwY0vFrgETiB73qd0nsA1LVd559_wHzOXfaa2_faqWjvZhFIIGzGTA7LSQOVhPbt_6QlA_k7cWrNwOFsTQ-ZKBRsnWVSnSe0AsR4WAfwdeEwxPIK3ORq-WemcFqYB4QNNixgBR78kvRgGR3PALKnTUewoKdBI8aOQPbKhO8L9_k_cUFCrmFO2GfudpaeP5A4Umwmdn7WpFYTcs3YZNxPP_Lgl9L_ShXc2OeSYy8XBQx062baJurhuaSBUzulnuu4D80oCLiqJs1dZzYoqYBAT_uvAT1l3z9bKS941AgWt5vFs-sHlw8G8ksJRA5e2_l9IC2yQTVHBdbr68mtzhRaPuLsbFAzzvs8iJwCKS5rWRUMT9uAaeQ3WouJ9kvIiXObIvs0MGodhigPtQSz_v=w697-h422-no?authuser=0" alt="enter image description here" /></p>
+
+<p><img src="https://lh3.googleusercontent.com/DSkVsiZeyrzpX1E1v30Ci4P1lBnupOXP7iQWZ2vI5uhIoJh4ZXTqYTjuKo4ydsrg4UrEAsL9nRlaxqc_oqyZ1gSxl4TeunWNFWy-wIGZpUxxwfnHQbEx6fgaSjYQRkkFwRlXSdTag2_FGIlzD2zUZC46CFzm9Djjv6zM3JaRohDfKD6qJTtqdAxATKgr_OuKCZfISyPdSbnruZdDVGQwcW5SCzq-RBqdL5SnVjUPrSZG6QCDxAZ6UvujI72aGwejNRSq7zm1XKfMDpB0HktGg7s2LwUiARcGsz-o-BxBJ5X9PsYb7lDtu_4K1OvPE0x06ZWo6ImXvXLNBcdTGgR1Mirz8NSNz3mZTMbLEZgmsMNBriEdl2Y0MchJtNBvBQY2bdiSIQcFvmhdDHVBbzi-md3elNKL_UYa11-8zJaB1yaYnncWFwjAP-csbWFTsh-6Ga4NezNufWND9cw-0mvC-qOMAmaN6kQkqg173DZF95FUgd9ebsW5u9b30IUnWwNDE1dptfCfOH_jDYsf_-OFywhfNAPMHWmb9HsaSiu3XZXAC50b_NeXDeSykHYKowxJ_PlGTb9Mu_k4tCTIanW1IokDHlcAuCpe2vADa51VbxjUQocauE7CJsS9t2qGbrsT8qswXwRR7Dy246w1wQerBI8o5cevHHTxaK2eMo3gWxUCeAIwqLk4VZegu_8s=w394-h278-no?authuser=0" alt="enter image description here" /></p>
+
+<p>The above charts show us that predicted probability distribution is heavily skewed to the left and very few players have predicted  probability over 0.5. <strong>The AUC for ROC curve is 0.75 and the True Positive Rate is 70%</strong>. This is not bad for an initial model but definitely room for improvement in future iterations.</p>
+
+<h2 id="output">Output</h2>
+<p>The final output of the model is a list of 11 players who are most likely to score 2+points during the upcoming game week. The workflow runs for every game week and the output predictions are available on the <strong>Streamlit</strong> website created <a href="http://fplgentoo.herokuapp.com">here</a>.
+<img src="https://lh3.googleusercontent.com/EPsuJXpoYlz373ooluqOL9D-0jUnxrJ1iV156cHxoA-zr_bCjduo57MRFHzplZNm6C3zjcH6Zjk1MNJBndWDpafLdxpjRKJw4dNZ9-2deb98qFRwwjrzQ3yt7ws46v1xfQ8LE1zwcAlUxok67swXJ08fvTMWCTkKGFyo76rHZ-zdNssJ-X2WRiXHWZslq4bdY7lejHRPpNRn4JZH9XwcFSWVRtiRxca0FwGa07za3TwNF-_Y7PRa7NY06Rh006TGUVjMvwX0WR14uf4wWkv8k8AFwDS80xs88d2utmvqM7rV50A9z19HDWi3LHYXqvLsXvg4b-W5RmH9-mYqZxgp8cqNNt06i-oZL9zd8ZLW8Nopzjj4gk_w0y1r8zHP3n_s3tBTPYDPleJ55FwnKxcLFqyaqAomdfBmIBPeEB5TmEcHWtD16_ECKqbaX2exGDLfBH0FO_Lb8jpp62B_ESe_v9gXLZpL8OTSBBB_iNlROLcFdpAlix9otgvaBHvWqVyXAMis7-dRXtUptFV56p3wnOJZoQVEupiJMUOBjoFzR2cLDBU02LUTo22XjV0bDdEUrkbB_IA4kyvSBR0e_w38PI0E8xhRggYFf8JiIw5_I_XqMq-PqyNKPKo-Un99IewH6sQDo6QSoSfI0TYibz_8x899zviJh1SKQFrjSyCjData0_k9lmnDCE1JuWqT=w1812-h897-no?authuser=0" alt="enter image description here" /></p>
+
+<p>I also look at points scored in previous game weeks by my team vs the actual dream team for the week &amp; average score for the game week. So far we can say that the team predicted by the model is doing slightly better than the average human on points scored every game week. Looking at the predictions for the six game weeks the model has been running, model team scored 249 points vs sum of average score of 239 pts. 
+<img src="https://lh3.googleusercontent.com/cOn41P4A6Boo6gXTcMsmrIVVk6nkq5mCOz_l4skF_GO2wL3MDiiWH_IHcJ3rGc6hoyth0pVJcbrrf1dWE_9ETzZDAgpagrAEq9tIlF2z5YJj9Tu0AnNPVqCsPfSTkPqAGIU96zJrScP1194C_m2Xj-IzV9HqUNClBge1wzcxDmvOXwWk1EYwmw46vEO2ydr8q3Q_dhEg8OLnkkduFlixRGtj9zbTlYEsJHeYUp4BBIADtieAvXbW9qqi89LFnpB1Ronw4f9HuTilfIr9_IR082WtWHOCCtOftwqQFEt1x5fYDsTZcIx2fzx3IOCJ5f70e2C0hZXcxzY3C-CrTbsO1mVp-kMmvp9IEcFDugVLXjyNlYsas8f1ALkO7P0ucGc3Bj06E0rpsosFt33Fn47Zlm1mMOATEQyEZ2LFXE3tXeEDEoPhlYN9MCG4FJAHmH5gqt4IlbjxhWz6h2W0RlfkHSJ4ss69-NgwnBUeQKJzYNyFPsc0Kq4Cz4Oo86EHaDRb-uuc4oId6bLQqk-jduYD3dmkXOrv8T_foQ2LvsfXva1iKOcl9mKOiptXJh6j6d-Pfnpen9XjAcNo5yvaHiUHK07CuB9ZqgF8lFRFRLtKDkieOK5zFBGV-L1AeQKjzO_b202n9bazHZULyE8Mhv6FQ0exzyKWuJN6q2vskHgsCQ0qRBIKzIoVthk2ohop=w705-h414-no?authuser=0" alt="enter image description here" /></p>
+
+<p>Hope is that model will continue to improve in its predictions through the season as it has access to higher volume of training data.</p>
+
+<p>Code for the entire project can be found <a href="https://github.com/arpitsolanki/FPLBot">here</a></p>
+
+<h2 id="next-steps--improvement">Next Steps &amp; Improvement</h2>
+<p>This entire project was taken up by me as a Christmas project to understand PL football better &amp; learn to use Streamlit for dashboarding. During the development of project I identified a few things that could be better -</p>
+<ol>
+  <li>Gather different metrics for attacking &amp; defensive footballers and train different models for each</li>
+  <li>Use Linear Programming to optimize the maximum points from the predicted team while ensuring that team budget doesn’t cross 100M pounds. 
+I’ll be looking to work further on this &amp; hopefully improve the performance of this model.</li>
+</ol>
+
+
+  </div><a class="u-url" href="/fastpagetest/2021/02/06/Using-ML-to-win-FPL.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/fastpagetest/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/fastpagetest/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/fastpagetest/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>An easy to use blogging platform with support for Jupyter Notebooks.</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/fastai" title="fastai"><svg class="svg-icon grey"><use xlink:href="/fastpagetest/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/fastdotai" title="fastdotai"><svg class="svg-icon grey"><use xlink:href="/fastpagetest/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
